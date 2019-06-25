@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
 from EmojiAlphabet import EmojiAlphabet
 import pygame
 import os
@@ -12,7 +14,7 @@ class WhatsappBot:
     def __init__(self):
         pygame.mixer.init()
         pygame.mixer.music.load('./media/person_online_notification.mp3')
-        self.browser = webdriver.Chrome()
+        self.browser = webdriver.Firefox()
         self.browser.get('https://web.whatsapp.com/')
 
         print("\nWelcome to the whatsapp bot\n")
@@ -38,7 +40,6 @@ class WhatsappBot:
             print("{} is {}".format(name, 'Online' if self.status else 'Offline'))
 
     def send_message(self, message, times=1):
-        import pdb; pdb.set_trace()
         message_field = self.browser.find_element_by_css_selector(
             self.message_input_selector)
         message_field.clear()
@@ -49,9 +50,40 @@ class WhatsappBot:
             message_field.send_keys(u'\ue007')
 
     def send_emoji_message(self, emoji, message):
-        pass
+        message_field = self.browser.find_element_by_css_selector(
+            self.message_input_selector)
+        message_field.clear()
+        message_field.click()
+        emoji = EmojiAlphabet("🎂")
 
+        for m in message:
+            emoji_generator = {
+                'a': emoji.a,
+                'b': emoji.b,
+                'c': emoji.c,
+                'd': emoji.d,
+                'e': emoji.e,
+                'f': emoji.f,
+                'g': emoji.g,
+                'h': emoji.h,
+                'i': emoji.i,
+                'j': emoji.j,
+                'k': emoji.k,
+                'l': emoji.l,
+                'm': emoji.m,
+                'n': emoji.n,
+            }
 
+            emoji_pieces = emoji_generator[m]()
+            for e in emoji_pieces:
+                print("= START =")
+                print(e)
+                print("= END =")
+                message_field.send_keys(e)
+                actions = ActionChains(self.browser)
+                actions.key_down(Keys.SHIFT).send_keys(Keys.ENTER).key_up(Keys.SHIFT).perform()
+                actions.reset_actions()
+            message_field.send_keys(Keys.ENTER)
 
 
 """
@@ -73,11 +105,6 @@ class WhatsappBot:
 
 
 def main():
-    emojiChar = EmojiAlphabet("😀")
-    foo = emojiChar.emoji_char('a')
-    print(foo[0])
-
-
     bot = WhatsappBot()
 
     menu = """
@@ -108,11 +135,8 @@ def main():
             times = input("Enter number of times you want to send it »\t")
             bot.send_message(message, times)
         elif sub_menu == 'emoji':
-            pass
-            ### convert to chars
-            ### send each char to emoji aplha
-            ### ctrl shif the output of emoji alpha
-            ### enter upon completion of one char.
+            message = input("Enter the message you want to send »\t")
+            bot.send_emoji_message("😀", message)
         else:
             print("Enter valid option,\n")
 
