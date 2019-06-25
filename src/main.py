@@ -1,64 +1,13 @@
 from selenium import webdriver
+from EmojiAlphabet import EmojiAlphabet
 import pygame
 import os
-import time
-
-
-class EmojiAlphabets:
-    def __init__(self, emoji):
-        self.emoji = emoji
-
-    def a(self):
-        emoji = self.emoji
-        _s = "　"
-        emoji_char = \
-            ('{}{}{}\n'.format(_s, emoji, emoji)) + \
-            ('{}{}{}\n'.format(emoji, _s, emoji)) + \
-            ('{}{}{}\n'.format(emoji, emoji, emoji)) + \
-            ('{}{}{}\n'.format(emoji, _s, emoji)) + \
-            ('{}{}{}\n'.format(emoji, _s, emoji))
-        return emoji_char
-
-    def b(self):
-        emoji = self.emoji
-        _s = "　"
-        emoji_char = \
-            ('{}{}{}\n'.format(emoji, emoji, _s)) + \
-            ('{}{}{}\n'.format(emoji, _s, emoji)) + \
-            ('{}{}{}\n'.format(emoji, emoji, emoji)) + \
-            ('{}{}{}\n'.format(emoji, _s, emoji)) + \
-            ('{}{}{}\n'.format(emoji, emoji, _s))
-        return 
-
-    def c(self):
-        emoji = self.emoji
-        _s = "　"
-        emoji_char = \
-            ('{}{}{}\n'.format(_s, emoji, emoji)) + \
-            ('{}{}{}\n'.format(emoji, _s, _s)) + \
-            ('{}{}{}\n'.format(emoji, _s, _s)) + \
-            ('{}{}{}\n'.format(emoji, _s, _s)) + \
-            ('{}{}{}\n'.format(_s, emoji, emoji))
-        return emoji_char
-
-    def emoji_string(self, string):
-        emoji_generator = {
-            'a': self.a,
-        }
-
-        emoji_string = []
-
-        for char in string:
-            foo = emoji_generator.get(char, "No emoji for this char")
-            emoji_string.append(foo())
-
-        # it returns a var which had milti line prints in it.
-        return emoji_string
 
 
 class WhatsappBot:
     status = None
-    search_bar_selector = "#side > div._2HS9r > div > label > input"
+    search_bar_selector = '#side > div._2HS9r > div > label > input'
+    message_input_selector = '#main > footer > div._2i7Ej.copyable-area > div._13mgZ > div > div._3u328.copyable-text.selectable-text'
 
     def __init__(self):
         pygame.mixer.init()
@@ -88,6 +37,23 @@ class WhatsappBot:
         if status:
             print("{} is {}".format(name, 'Online' if self.status else 'Offline'))
 
+    def send_message(self, message, times=1):
+        import pdb; pdb.set_trace()
+        message_field = self.browser.find_element_by_css_selector(
+            self.message_input_selector)
+        message_field.clear()
+        message_field.click()
+
+        for t in range(times):
+            message_field.send_keys(message)
+            message_field.send_keys(u'\ue007')
+
+    def send_emoji_message(self, emoji, message):
+        pass
+
+
+
+
 """
     def keepWatching(self, name, num):
         print("++++++++++++++++++++++ web.whatsapp scrapping started ++++++++++++++++++++++")
@@ -107,13 +73,9 @@ class WhatsappBot:
 
 
 def main():
-    emojiChar = EmojiAlphabets("😚")
-    foo = emojiChar.emoji_string('a')
+    emojiChar = EmojiAlphabet("😀")
+    foo = emojiChar.emoji_char('a')
     print(foo[0])
-    import pdb; pdb.set_trace()
-    return
-
-
 
 
     bot = WhatsappBot()
@@ -124,6 +86,7 @@ def main():
         spyTill: spy for the mentioned duration.\n
         send message:Send someone message\n
         change name: change to different person\n
+        emoji: send emojis as alphabets.
     ==================================================
     """
 
@@ -139,6 +102,17 @@ def main():
             bot.watch(name)
         elif sub_menu == 'change name':
             name = input("Enter new name »\t")
+            bot.watch(name)
+        elif sub_menu == 'send message':
+            message = input("Enter the message you want to send »\t")
+            times = input("Enter number of times you want to send it »\t")
+            bot.send_message(message, times)
+        elif sub_menu == 'emoji':
+            pass
+            ### convert to chars
+            ### send each char to emoji aplha
+            ### ctrl shif the output of emoji alpha
+            ### enter upon completion of one char.
         else:
             print("Enter valid option,\n")
 
