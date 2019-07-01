@@ -72,6 +72,18 @@ class WhatsappBot:
                 'l': emoji.l,
                 'm': emoji.m,
                 'n': emoji.n,
+                'o': emoji.o,
+                'p': emoji.p,
+                'q': emoji.q,
+                'r': emoji.r,
+                's': emoji.s,
+                't': emoji.t,
+                'u': emoji.u,
+                'v': emoji.v,
+                'w': emoji.w,
+                'x': emoji.x,
+                'y': emoji.y,
+                'z': emoji.z,
             }
 
             emoji_pieces = emoji_generator[m]()
