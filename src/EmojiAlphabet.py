@@ -1,14 +1,16 @@
 class EmojiAlphabet:
     space = "　  "
+    fill_white_space = "🙈"
 
     def __init__(self, emoji):
         self.emoji = emoji
 
-    def a(self):
+    def A(self):
         E = self.emoji
         o = self.space
+        ws = self.fill_white_space
         return [
-            '{}{}{}{}{}'.format(o, E, E, E, E),
+            '{}{}{}{}{}'.format(ws, E, E, E, E),
             '{}{}{}{}{}'.format(E, o, o, o, E),
             '{}{}{}{}{}'.format(E, o, o, o, E),
             '{}{}{}{}{}'.format(E, E, E, E, E),
@@ -17,7 +19,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, o, o, o, E),
         ]
 
-    def b(self):
+    def B(self):
         E = self.emoji
         o = self.space
         return [
@@ -30,20 +32,21 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, E, E, E, o),
         ]
 
-    def c(self):
+    def C(self):
         E = self.emoji
         o = self.space
+        ws = self.fill_white_space
         return [
+            '{}{}{}{}{}'.format(ws, E, E, E, o),
+            '{}{}{}{}{}'.format(E, o, o, o, E),
+            '{}{}{}{}{}'.format(E, o, o, o, o),
+            '{}{}{}{}{}'.format(E, o, o, o, o),
+            '{}{}{}{}{}'.format(E, o, o, o, o),
+            '{}{}{}{}{}'.format(E, o, o, o, E),
             '{}{}{}{}{}'.format(o, E, E, E, o),
-            '{}{}{}{}{}'.format(E, o, o, o, E),
-            '{}{}{}{}{}'.format(E, o, o, o, o),
-            '{}{}{}{}{}'.format(E, o, o, o, o),
-            '{}{}{}{}{}'.format(E, o, o, o, o),
-            '{}{}{}{}{}'.format(E, o, o, o, E),
-            '{}{}{}{}{}'.format(o, E, E, E, o),
         ]
 
-    def d(self):
+    def D(self):
         E = self.emoji
         o = self.space
         return [
@@ -56,7 +59,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, E, E, E, o),
         ]
 
-    def e(self):
+    def E(self):
         E = self.emoji
         o = self.space
         return [
@@ -69,7 +72,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, E, E, E, E),
         ]
 
-    def f(self):
+    def F(self):
         E = self.emoji
         o = self.space
         return [
@@ -82,11 +85,12 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, o, o, o, o),
         ]
 
-    def g(self):
+    def G(self):
         E = self.emoji
         o = self.space
+        ws = self.fill_white_space
         return [
-            '{}{}{}{}{}'.format(o, E, E, E, o),
+            '{}{}{}{}{}'.format(ws, E, E, E, o),
             '{}{}{}{}{}'.format(E, o, o, o, E),
             '{}{}{}{}{}'.format(E, o, o, o, o),
             '{}{}{}{}{}'.format(E, o, o, o, o),
@@ -95,7 +99,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(o, E, E, E, o),
         ]
 
-    def h(self):
+    def H(self):
         E = self.emoji
         o = self.space
         return [
@@ -108,7 +112,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, o, o, o, E),
         ]
 
-    def i(self):
+    def I(self):
         E = self.emoji
         o = self.space
         return [
@@ -121,7 +125,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, E, E, E, E),
         ]
 
-    def j(self):
+    def J(self):
         E = self.emoji
         o = self.space
         return [
@@ -134,7 +138,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(o, E, E, E, o),
         ]
 
-    def k(self):
+    def K(self):
         E = self.emoji
         o = self.space
         return [
@@ -147,7 +151,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, o, o, o, E),
         ]
 
-    def l(self):
+    def L(self):
         E = self.emoji
         o = self.space
         return [
@@ -160,7 +164,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, E, E, E, E),
         ]
 
-    def m(self):
+    def M(self):
         E = self.emoji
         o = self.space
         return [
@@ -173,7 +177,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, o, o, o, E),
         ]
 
-    def n(self):
+    def N(self):
         E = self.emoji
         o = self.space
         return [
@@ -186,11 +190,12 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, o, o, o, E),
         ]
 
-    def o(self):
+    def O(self):
         E = self.emoji
         o = self.space
+        ws = self.fill_white_space
         return [
-            '{}{}{}{}{}'.format(o, E, E, E, o),
+            '{}{}{}{}{}'.format(ws, E, E, E, o),
             '{}{}{}{}{}'.format(E, o, o, o, E),
             '{}{}{}{}{}'.format(E, o, o, o, E),
             '{}{}{}{}{}'.format(E, o, o, o, E),
@@ -199,7 +204,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(o, E, E, E, o),
         ]
 
-    def p(self):
+    def P(self):
         E = self.emoji
         o = self.space
         return [
@@ -212,11 +217,12 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, o, o, o, o),
         ]
 
-    def q(self):
+    def Q(self):
         E = self.emoji
         o = self.space
+        ws = self.fill_white_space
         return [
-            '{}{}{}{}{}'.format(o, E, E, E, o),
+            '{}{}{}{}{}'.format(ws, E, E, E, o),
             '{}{}{}{}{}'.format(E, o, o, o, E),
             '{}{}{}{}{}'.format(E, o, o, o, E),
             '{}{}{}{}{}'.format(E, o, o, o, E),
@@ -225,7 +231,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(o, E, E, o, E),
         ]
 
-    def r(self):
+    def R(self):
         E = self.emoji
         o = self.space
         return [
@@ -238,12 +244,12 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, o, o, o, E),
         ]
 
-
-    def s(self):
+    def S(self):
         E = self.emoji
         o = self.space
+        ws = self.fill_white_space
         return [
-            '{}{}{}{}{}'.format(o, E, E, E, o),
+            '{}{}{}{}{}'.format(ws, E, E, E, o),
             '{}{}{}{}{}'.format(E, o, o, o, E),
             '{}{}{}{}{}'.format(E, o, o, o, o),
             '{}{}{}{}{}'.format(o, E, E, E, o),
@@ -252,7 +258,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(o, E, E, E, o),
         ]
 
-    def t(self):
+    def T(self):
         E = self.emoji
         o = self.space
         return [
@@ -265,7 +271,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(o, o, E, o, o),
         ]
 
-    def u(self):
+    def U(self):
         E = self.emoji
         o = self.space
         return [
@@ -278,7 +284,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(o, E, E, E, o),
         ]
 
-    def v(self):
+    def V(self):
         E = self.emoji
         o = self.space
         return [
@@ -291,7 +297,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(o, o, E, o, o),
         ]
 
-    def w(self):
+    def W(self):
         E = self.emoji
         o = self.space
         return [
@@ -304,7 +310,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(o, E, o, E, o),
         ]
 
-    def x(self):
+    def X(self):
         E = self.emoji
         o = self.space
         return [
@@ -317,7 +323,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, o, o, o, E),
         ]
 
-    def y(self):
+    def Y(self):
         E = self.emoji
         o = self.space
         return [
@@ -330,7 +336,7 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(o, o, E, o, o),
         ]
 
-    def z(self):
+    def Z(self):
         E = self.emoji
         o = self.space
         return [

@@ -55,35 +55,39 @@ class WhatsappBot:
         message_field.clear()
         message_field.click()
         emoji = EmojiAlphabet("🎂")
+        
+        # Since we have only uppercase emoji alphabets
+        # converting the message to uppercase.
+        message = message.upper()
 
         for m in message:
             emoji_generator = {
-                'a': emoji.a,
-                'b': emoji.b,
-                'c': emoji.c,
-                'd': emoji.d,
-                'e': emoji.e,
-                'f': emoji.f,
-                'g': emoji.g,
-                'h': emoji.h,
-                'i': emoji.i,
-                'j': emoji.j,
-                'k': emoji.k,
-                'l': emoji.l,
-                'm': emoji.m,
-                'n': emoji.n,
-                'o': emoji.o,
-                'p': emoji.p,
-                'q': emoji.q,
-                'r': emoji.r,
-                's': emoji.s,
-                't': emoji.t,
-                'u': emoji.u,
-                'v': emoji.v,
-                'w': emoji.w,
-                'x': emoji.x,
-                'y': emoji.y,
-                'z': emoji.z,
+                'A': emoji.A,
+                'B': emoji.B,
+                'C': emoji.C,
+                'D': emoji.D,
+                'E': emoji.E,
+                'F': emoji.F,
+                'G': emoji.G,
+                'H': emoji.H,
+                'I': emoji.I,
+                'J': emoji.J,
+                'K': emoji.K,
+                'L': emoji.L,
+                'M': emoji.M,
+                'N': emoji.N,
+                'O': emoji.O,
+                'P': emoji.P,
+                'Q': emoji.Q,
+                'R': emoji.R,
+                'S': emoji.S,
+                'T': emoji.T,
+                'U': emoji.U,
+                'V': emoji.V,
+                'W': emoji.W,
+                'X': emoji.X,
+                'Y': emoji.Y,
+                'Z': emoji.Z,
             }
 
             emoji_pieces = emoji_generator[m]()
