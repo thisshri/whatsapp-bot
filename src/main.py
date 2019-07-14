@@ -54,7 +54,7 @@ class WhatsappBot:
             self.message_input_selector)
         message_field.clear()
         message_field.click()
-        emoji = EmojiAlphabet("🎂")
+        emoji = EmojiAlphabet(emoji)
 
         # Since we have only uppercase emoji alphabets
         # converting the message to uppercase.
@@ -154,7 +154,34 @@ def main():
         elif sub_menu == 'emoji':
             bot.watch(name)
             message = input("Enter the message you want to send »\t")
-            bot.send_emoji_message("😀", message)
+            emojis = {
+                'cake': '🎂',
+                'partyface': '🥳',
+                'partypooper': '🎉',
+                'kiss': '😚',
+                'laugh': '😂',
+                'heart': '❤️',
+            }
+            print(
+                """
+                type "cake" for {}\n
+                type partyface for {}\n
+                type partypooper for {}\n
+                type kiss for {}\n
+                type laugh for {}\n
+                type heart for {}\n
+                """.format(
+                    emojis['cake'],
+                    emojis['partyface'],
+                    emojis['partypooper'],
+                    emojis['kiss'],
+                    emojis['laugh'],
+                    emojis['heart']
+                )
+            )
+            emoji_key = input("Emoji to use? »\t")
+            emoji = emojis.get(emoji_key, '😀')
+            bot.send_emoji_message(emoji, message)
         else:
             print("Enter valid option,\n")
 
