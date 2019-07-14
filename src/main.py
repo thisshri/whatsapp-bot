@@ -55,7 +55,7 @@ class WhatsappBot:
         message_field.clear()
         message_field.click()
         emoji = EmojiAlphabet("🎂")
-        
+
         # Since we have only uppercase emoji alphabets
         # converting the message to uppercase.
         message = message.upper()
@@ -88,13 +88,13 @@ class WhatsappBot:
                 'X': emoji.X,
                 'Y': emoji.Y,
                 'Z': emoji.Z,
+                ' ': emoji.heart,
             }
 
             emoji_pieces = emoji_generator[m]()
             for e in emoji_pieces:
-                print("= START =")
-                print(e)
-                print("= END =")
+                # Todo
+                # Show percentage of work done/ emojis sent.
                 message_field.send_keys(e)
                 actions = ActionChains(self.browser)
                 actions.key_down(Keys.SHIFT).send_keys(Keys.ENTER).key_up(Keys.SHIFT).perform()
@@ -147,10 +147,12 @@ def main():
             name = input("Enter new name »\t")
             bot.watch(name)
         elif sub_menu == 'send message':
+            bot.watch(name)
             message = input("Enter the message you want to send »\t")
-            times = input("Enter number of times you want to send it »\t")
+            times = int(input("Enter number of times you want to send it »\t"))
             bot.send_message(message, times)
         elif sub_menu == 'emoji':
+            bot.watch(name)
             message = input("Enter the message you want to send »\t")
             bot.send_emoji_message("😀", message)
         else:

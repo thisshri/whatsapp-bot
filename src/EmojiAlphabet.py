@@ -348,3 +348,17 @@ class EmojiAlphabet:
             '{}{}{}{}{}'.format(E, o, o, o, o),
             '{}{}{}{}{}'.format(E, E, E, E, E),
         ]
+
+    def heart(self):
+        E = '❤️'
+        o = self.space
+        ws = self.fill_white_space
+        return [
+            '{}{}{}{}{}'.format(ws, o, o, o, o),
+            '{}{}{}{}{}'.format(o, E, o, E, o),
+            '{}{}{}{}{}'.format(E, E, E, E, E),
+            '{}{}{}{}{}'.format(E, E, E, E, E),
+            '{}{}{}{}{}'.format(o, E, E, E, o),
+            '{}{}{}{}{}'.format(o, o, E, o, o),
+            '{}{}{}{}{}'.format(o, o, o, o, o),
+        ]
