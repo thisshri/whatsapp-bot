@@ -108,32 +108,12 @@ class WhatsappBot:
                 actions.reset_actions()
             message_field.send_keys(Keys.ENTER)
 
-
-"""
-    def keepWatching(self, name, num):
-        print("++++++++++++++++++++++ web.whatsapp scrapping started ++++++++")
-
-        for x in range(num):
-            #wait for 30 secs
-            time.sleep(10)
-            #call watch(name)
-            watch(name);
-            print("staus is : ",STATUS)
-            if (STATUS == "online"):
-                #play the sound
-                pygame.mixer.music.play()
-            else:
-                print(name," is offline")
- """
-
-
 def main():
     bot = WhatsappBot()
 
     menu = """
     =================== M E N U ======================
         spy: To spy if someone is online.\n
-        spyTill: spy for the mentioned duration.\n
         send message:Send someone message\n
         change name: change to different person\n
         emoji: send emojis as alphabets.
