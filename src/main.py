@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -14,8 +15,12 @@ class WhatsappBot:
 
     def __init__(self):
         pygame.mixer.init()
-        pygame.mixer.music.load('./media/person_online_notification.mp3')
-        self.browser = webdriver.Firefox()
+        pygame.mixer.music.load('../media/person_online_notification.mp3')
+
+        self.browser = webdriver.Firefox(
+            executable_path='../bin/geckodriver'
+        )
+
         self.browser.get('https://web.whatsapp.com/')
 
         print("\nWelcome to the whatsapp bot\n")
