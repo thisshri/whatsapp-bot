@@ -5,6 +5,7 @@ Created using Selenium and Python 3.
 1. Send a text message as many times you want to a selected *chat* user or group.
 
 ***Command:***
+
 > send message
 
 > hi
@@ -15,7 +16,9 @@ Created using Selenium and Python 3.
 
 
 2. Send _alpha emoji message_, the letters from the message is converted to emoji alphabet and then sent to the chat.
+
 ***Command:***
+
 > emoji
 
 > hello
@@ -25,7 +28,9 @@ Created using Selenium and Python 3.
 ![1](https://imgur.com/fulmGwd.png)
 
 3. Check if the user is online. ( it is supposed to do something more but at this time it just tells the user status - online/offline.)
+
 ***Command:***
+
 > spy
 
 > _name_of_the_uesr_
@@ -43,4 +48,5 @@ Created using Selenium and Python 3.
 ## How to use/run it.
 Run main.py as a script 
 > ` ./main.py`
-> NOTE: Due to some technical reason it only works with Firefox.
+
+> NOTE: Due to some technical reason this script only works with ***Firefox***.
