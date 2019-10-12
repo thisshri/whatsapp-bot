@@ -46,7 +46,13 @@ Created using Selenium and Python 3.
 
 
 ## How to use/run it.
-Run main.py as a script 
+1. Open https://web.whatsapp.com in Firefox.
+
+2. Login whatsapp using your mobile.
+
+3. Run main.py as a script 
 > ` ./main.py`
+
+Then follow the instructions shown in the console. 
 
 > NOTE: Due to some technical reason this script only works with ***Firefox***.
