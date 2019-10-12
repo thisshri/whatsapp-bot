@@ -1,27 +1,46 @@
 # Whatsapp-online-status
-Build using Selenium and Python 3. It alerts when a person comes online by playing a sound.
+Created using Selenium and Python 3.
+
+## What can you do with this.
+1. Send a text message as many times you want to a selected *chat* user or group.
+
+***Command:***
+> send message
+
+> hi
+
+> 10
+
+![1](https://imgur.com/H24keRc.png)
 
 
-## How to use it
+2. Send _alpha emoji message_, the letters from the message is converted to emoji alphabet and then sent to the chat.
+***Command:***
+> emoji
 
-#### Step 1.
+> hello
 
-    python3
-  
-![1](https://user-images.githubusercontent.com/17667263/49340440-d924d680-f665-11e8-8ba8-4e5009a57547.png)
+> laugh
+
+![1](https://imgur.com/fulmGwd.png)
+
+3. Check if the user is online. ( it is supposed to do something more but at this time it just tells the user status - online/offline.)
+***Command:***
+> spy
+
+> _name_of_the_uesr_
+
+![1](https://imgur.com/NVBc7vv.png)
+
+4. Change User to performs about action on them.
 
 
-#### Step 2.
-    import scrap
-    
-   Login the webpage run by this program.
-   
-![2](https://user-images.githubusercontent.com/17667263/49340441-da560380-f665-11e8-8a5b-57ef2d4407a2.png)
+## Setup
+1. config your virtualenv.
+2. install requirement.py
 
 
-### Step 3.
-    scrap.keepWatching("nameOfThePerson", num)
-
-__It checks user's status every 10 second for passed num of times.__ 
-
-![3](https://user-images.githubusercontent.com/17667263/49340442-db873080-f665-11e8-8f62-4a9f9ac0866d.png)
+## How to use/run it.
+Run main.py as a script 
+> ` ./main.py`
+> NOTE: Due to some technical reason it only works with Firefox.
