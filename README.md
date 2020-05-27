@@ -1,6 +1,6 @@
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
-## Whatsapp Bot
+
+## Whatsapp Bot [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 Created using Selenium and Python 3.
 
 ## What can you do with this.
