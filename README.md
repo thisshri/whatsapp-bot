@@ -1,10 +1,12 @@
 
 
-## Whatsapp Bot [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-Created using Selenium and Python 3.
+## Whatsapp Bot
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![Generic badge](https://img.shields.io/badge/Made%20with-Selenium-45ad30.svg)](https://www.selenium.dev/)
+
 
 ## What can you do with this.
-1. Send a text message as many times you want to a selected *chat* user or group.
+#### 1. Send a text message as many times you want to a selected *chat* user or group.
 
 ***Command:***
 
@@ -17,7 +19,7 @@ Created using Selenium and Python 3.
 ![1](https://imgur.com/H24keRc.png)
 
 
-2. Send _alpha emoji message_, the letters from the message is converted to emoji alphabet and then sent to the chat.
+#### 2. Send _alpha emoji message_, the letters from the message is converted to emoji alphabet and then sent to the chat.
 
 ***Command:***
 
@@ -29,7 +31,7 @@ Created using Selenium and Python 3.
 
 ![1](https://imgur.com/fulmGwd.png)
 
-3. Check if the user is online. ( it is supposed to do something more but at this time it just tells the user status - online/offline.)
+#### 3. Check if the user is online. ( it is supposed to do something more but at this time it just tells the user status - online/offline.)
 
 ***Command:***
 
