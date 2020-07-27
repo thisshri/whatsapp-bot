@@ -16,7 +16,7 @@ class WhatsappBot:
 
     def __init__(self):
         pygame.mixer.init()
-        pygame.mixer.music.load('../media/person_online_notification.mp3')
+        pygame.mixer.music.load('../media/person_online_notification.wav')
 
         self.browser = webdriver.Firefox(
             executable_path='../bin/geckodriver'
