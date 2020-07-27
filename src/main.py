@@ -9,9 +9,10 @@ import os
 
 class WhatsappBot:
     status = None
-    search_bar_selector = '#side > div._2HS9r > div > label > input'
-    message_input_selector = """#main > footer > div._2i7Ej.copyable-area > \
-        div._13mgZ > div > div._3u328.copyable-text.selectable-text"""
+    search_bar_selector = '#side > div._2EoyP > div > label > div > div._3FRCZ.copyable-text.selectable-text'
+    message_input_selector = """
+        #main > footer > div._3ee1T._1LkpH.copyable-area > div._3uMse > div > div._3FRCZ.copyable-text.selectable-text
+    """
 
     def __init__(self):
         pygame.mixer.init()
