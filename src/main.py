@@ -1,7 +1,9 @@
-#!/usr/bin/python3
 from selenium import webdriver
 from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
+
 from EmojiAlphabet import EmojiAlphabet
 import pygame
 import os
@@ -9,31 +11,33 @@ import os
 
 class WhatsappBot:
     status = None
-    search_bar_selector = '._1aIlm > div:nth-child(2)'
-    message_input_selector = '._1hRBM > div:nth-child(2)'
+    search_bar_selector = '/html/body/div[1]/div/div/div[3]/div/div[1]/div/div/div[2]/div/div[2]'
+    message_input_selector = '#main > footer > div._2BU3P.tm2tP.copyable-area > div > span:nth-child(2) > div > div._2lMWa > div.p3_M1 > div > div.fd365im1.to2l77zo.bbv8nyr4.mwp4sxku.gfz4du6o.ag5g9lrv'
 
     def __init__(self):
         pygame.mixer.init()
-        pygame.mixer.music.load('../media/person_online_notification.wav')
+        pygame.mixer.music.load('media/person_online_notification.wav')
 
-        self.browser = webdriver.Firefox(
-            executable_path='../bin/geckodriver'
-        )
+        firefox_profile = FirefoxProfile('/home/shri/snap/firefox/common/.mozilla/firefox/5l11qwbb.default-release')
+
+        self.browser = webdriver.Firefox(firefox_profile)
 
         self.browser.get('https://web.whatsapp.com/')
 
         print("\nWelcome to the whatsapp bot\n")
 
     def watch(self, name):
-        search_bar = self.browser.find_element_by_css_selector(
-            self.search_bar_selector)
+        search_bar = self.browser.find_element(
+            By.XPATH,
+            self.search_bar_selector
+        )
+
         search_bar.clear()
         search_bar.click()
         search_bar.send_keys(name)
-        # press enter to search the person.
-        search_bar.send_keys(u'\ue007')
+        search_bar.send_keys(Keys.ENTER)
 
-        _status = self.browser.find_element_by_css_selector('#main > header')
+        _status = self.browser.find_element(By.CSS_SELECTOR, '#main > header')
         status = _status.text
 
         if status.find('online') != -1:
@@ -49,14 +53,16 @@ class WhatsappBot:
             )
 
     def send_message(self, message, times=1):
-        message_field = self.browser.find_element_by_css_selector(
-            self.message_input_selector)
+        message_field = self.browser.find_element(
+            By.CSS_SELECTOR,
+            self.message_input_selector
+        )
         message_field.clear()
         message_field.click()
 
         for t in range(times):
             message_field.send_keys(message)
-            message_field.send_keys(u'\ue007')
+            message_field.send_keys(Keys.ENTER)
 
     def send_emoji_message(self, emoji, message):
         message_field = self.browser.find_element_by_css_selector(
