@@ -45,18 +45,15 @@
 
 
 ## Setup
-1. config your virtualenv.
-2. install requirement.py
+1. Clone the project
+2. Install requirements.txt
+3. Make sure you have geckodriver on path `/usr/local/bin/geckodriver`
 
 
 ## How to use/run it.
-1. Open https://web.whatsapp.com in Firefox.
-
+1. Run: `python src/main.py`
 2. Login whatsapp using your mobile.
 
-3. Run main.py as a script 
-> ` ./main.py`
+Then follow the instructions shown in the terminal. 
 
-Then follow the instructions shown in the console. 
-
-> NOTE: Due to some technical reason this script only works with ***Firefox***.
+> NOTE: The script is only tested with ***Firefox***.
